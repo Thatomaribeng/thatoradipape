@@ -1,0 +1,114 @@
+<!DOCTYPE.html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1.0">
+<title>Personal Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/f7bc18ccdc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+<div class="container">
+<nav>
+<img src="img/PLOGO.png" class="logo">
+<ul id="sidemenu">
+<i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html">About Me</a></li>
+<li><a href="index.html">Services</a></li>
+<li><a href="index.html">Portfolio</a></li>
+<li><a href="index.html">Contact</a></li>
+</ul>
+<i class="fa-solid fa-bars"onclick="openmenu()"></i>
+
+</nav>
+<div class="imagination">
+<div class="slide">
+<div class="item" style="background-image: url(img/front.jpg);">
+<div class="content">
+<div class="name">Thato</div>
+<div class="des">Radipape welcome to my achievements section</div>
+<button>See More</button>
+</div>
+</div>
+<div class="item" style="background-image: url(img/front.jpg);">
+<div class="content">
+<div class="name">Thato</div>
+<div class="des">Radipape welcome to my achievements section</div>
+<button>See More</button>
+</div>
+</div>
+<div class="item" style="background-image: url(img/front.jpg);">
+<div class="content">
+<div class="name">Thato</div>
+<div class="des">Radipape welcome to my achievements section</div>
+<button>See More</button>
+</div>
+</div>
+<div class="item" style="background-image: url(img/front.jpg);">
+<div class="content">
+<div class="name">Thato</div>
+<div class="des">Radipape welcome to my achievements section</div>
+<button>See More</button>
+</div>
+</div>
+<div class="item" style="background-image: url(img/front.jpg);">
+<div class="content">
+<div class="name">Thato</div>
+<div class="des">Radipape welcome to my achievements section</div>
+<button>See More</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+for(tablink of tablinks){
+tablink.classList.remove("active-link");
+}
+for(tabcontect of tabcontents){
+tabcontect.classList.remove("active-tab");
+}
+event.currentTarget.classList.add("active-link");
+document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+
+<script>
+var sidemenu = document.getElementById("sidemenu");
+
+function openmenu(){
+sidemenu.style.right = "0";
+}
+
+function closemenu(){
+sidemenu.style.right = "-200px";
+}
+</script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwdM9TDaoOdnegEu5iVwPC_ormPPuKPuMSd0p1XYuHCOztQKfCC8cHhNW3Nx7iPgxWi/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+	  msg.innerHTML = "Thank you, we will get back to you shortly!"
+	  setTimeout(function(){
+	  msg.innerHTML = ""
+	  },2000)
+	  form.reset()
+	  })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
